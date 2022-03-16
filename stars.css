@@ -1,0 +1,19 @@
+.checked {
+    color: orange;
+}
+
+#star0:hover {
+    color:crimson;
+}
+#star1:hover {
+    color:crimson;
+}
+#star2:hover {
+    color:crimson;
+}
+#star3:hover {
+    color:crimson;
+}
+#star4:hover {
+    color:crimson;
+}
