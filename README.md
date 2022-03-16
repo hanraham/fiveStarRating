@@ -1,0 +1,1 @@
+Change color of stars when clicked. Like a 5 star rating system
