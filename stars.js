@@ -17,14 +17,12 @@ docReady(function () {
     document.querySelector("#star4").onclick = function() { ratingStars(4); };
 
     function ratingStars (numberStars) {
-        for (let step = 0; step <= 4; step++){
-            let stringTest = "#star" + step;
-            
+        for (let step = 0; step <= 4; step++){            
             if (step <= numberStars){ 
-                document.querySelector(stringTest).classList.add("checked");
+                document.querySelector("#star" + step).classList.add("checked");
             }
             else {
-                document.querySelector(stringTest).classList.remove("checked");
+                document.querySelector("#star" + step).classList.remove("checked");
             }
         }
     };
