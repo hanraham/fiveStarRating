@@ -9,21 +9,36 @@ function docReady(fn) {
 
 docReady(function () {
     // DOM is loaded and ready for manipulation here
-    
-    document.querySelector("#star0").onclick = function() { ratingStars(0); };
-    document.querySelector("#star1").onclick = function() { ratingStars(1); };
-    document.querySelector("#star2").onclick = function() { ratingStars(2); };
-    document.querySelector("#star3").onclick = function() { ratingStars(3); };
-    document.querySelector("#star4").onclick = function() { ratingStars(4); };
 
-    function ratingStars (numberStars) {
-        for (let step = 0; step <= 4; step++){            
-            if (step <= numberStars){ 
-                document.querySelector("#star" + step).classList.add("checked");
-            }
-            else {
-                document.querySelector("#star" + step).classList.remove("checked");
-            }
-        }
-    };
+    const fiveStars = document.querySelectorAll(".starReview span");
+
+    fiveStars.forEach((singleStar, starIndex) => {
+
+        // Highlights clicked star and previous stars
+        singleStar.addEventListener("click", () => {
+            fiveStars.forEach((starLoop, secondIndex) => {
+                if (secondIndex <= starIndex) {
+                    fiveStars[secondIndex].classList.add("checked");
+                }
+                else {
+                    fiveStars[secondIndex].classList.remove("checked");
+                }
+            });
+        });
+
+        // Hover effect
+        singleStar.addEventListener('mouseenter', () => {
+            fiveStars.forEach((addHover, hoverIndex) => {
+                if (hoverIndex <= starIndex) {
+                    fiveStars[hoverIndex].classList.add("hovered");
+                }
+            });
+        });
+        singleStar.addEventListener('mouseleave', () => {
+            fiveStars.forEach( (dummyStar, rmvHoverIndex) => {
+                fiveStars[rmvHoverIndex].classList.remove("hovered");
+            });
+        });
+
+    });
 });
