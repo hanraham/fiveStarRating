@@ -6,6 +6,15 @@
     color: orange;
 }
 
-.starReview > span:hover {
-     color: orange;
+/* Trick to do hover with CSS only */
+.starReview:hover span{
+    color: orange;
+}
+
+.starReview span:hover {
+    color: orange;
+}
+
+.starReview span:hover ~ span {
+    color:black;
 }

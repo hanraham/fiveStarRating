@@ -26,7 +26,8 @@ docReady(function () {
             });
         });
 
-        // Hover effect
+        /*
+        // Hover effect with javascript
         singleStar.addEventListener('mouseenter', () => {
             fiveStars.forEach((addHover, hoverIndex) => {
                 if (hoverIndex <= starIndex) {
@@ -39,6 +40,7 @@ docReady(function () {
                 fiveStars[rmvHoverIndex].classList.remove("hovered");
             });
         });
+        */
 
     });
 });
